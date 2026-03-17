@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+<h1>{{ product.name }}</h1>
+<p>{{ product.description }}</p>
+<p><b>Цена:</b> {{ product.price }} тг</p>
+
+{% if product.stock > 0 %}
+  <p><b>В наличии:</b> {{ product.stock }}</p>
+{% else %}
+  <p><b>Нет в наличии</b></p>
+{% endif %}
+
+<p><a href="{% url 'catalog:product_list_by_category' product.category.slug %}">← Назад в категорию</a></p>
+{% endblock %}

@@ -15,6 +15,8 @@ import os
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 load_dotenv(BASE_DIR / ".env")
 
